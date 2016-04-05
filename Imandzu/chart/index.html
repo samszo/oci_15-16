@@ -15,7 +15,7 @@
 	var color = d3.scale.ordinal()
     .range(["#b9a7a6", "#ad9897", "#a28a88", "#967b79", "#8b6d6b", "#7d6260", "#6f5755", "#614c4a", "#534140", "#453635", "#372b2a", "#292020", "#1b1515", "#1e1312", "#170e0d"]);
 	
-	d3.csv("EtudiantsOCI15-16.csv", type, function(error, data) {
+	d3.csv("EtudiantsOCI15-16.csv", function(error, data) {
 	
 		if (error) throw error;
 		var canvas = d3.select("body").append("svg")
