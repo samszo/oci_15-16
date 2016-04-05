@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="images/logo-ConvertImage.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Mandzu | Chart OCI 15/16</title>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+	
+	
+<body>
+
+	<script>
+
+	var color = d3.scale.ordinal()
+    .range(["#b9a7a6", "#ad9897", "#a28a88", "#967b79", "#8b6d6b", "#7d6260", "#6f5755", "#614c4a", "#534140", "#453635", "#372b2a", "#292020", "#1b1515", "#1e1312", "#170e0d"]);
+	
+	d3.csv("EtudiantsOCI15-16.csv", type, function(error, data) {
+	
+		if (error) throw error;
+		var canvas = d3.select("body").append("svg")
+			.attr("width",500)
+			.attr("height",800)
+		
+		canvas.selectAll("rect")
+			.data(data)
+			.enter()
+				.append("rect")
+				.attr("width", 500)
+				.attr("height", 48)
+				.attr("y", function(d, i) {return i * 50;})
+				.style("fill", function(d) { 
+		var c = color(d.data['page Web / 20']);    	  
+    	  	return c; 
+    	  	});
+				
+				
+		canvas.selectAll("text")
+			.data(data)
+			.enter()
+				.append("text")
+				.attr("fill", "white")
+				.attr("y", function(d, i) {return i * 50 + 24; })
+				.text(function(d) { 
+		var txt = d.data['E-mail '];    	  
+    	  	return txt; 
+    	  	});
+	})
+				
+	</script>			
+		
+</body>
+</html>
