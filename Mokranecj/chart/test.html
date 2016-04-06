@@ -57,18 +57,7 @@ d3.csv("EtudiantsOCI15-16.csv", type, function(error, data) {
     	  	});
 });
 function type(d) {
-				if(d.data['Vos competence [Java] '] == 'boffff') return 100; 
-				else if(d.data['Vos competence [Java] '] == "connais pas") return 200;
-				else if(d.data['Vos competence [Java] '] == "pas trés bon") return 300;
-				else if(d.data['Vos competence [Java] '] == "j'men sors") return 400;
-				else if(d.data['Vos competence [Java] '] == "fort") return 500;
-				else if(d.data['Vos competence [Java] '] == "trop fort") return 600;
-				else if(d.data['Vos competence [Java] '] == "expert") return 700;
-				else return 0;
-				}
-
-/*function type(d) {
   d.population = +d.population;
   return d;
-}*/
+}
 </script>
