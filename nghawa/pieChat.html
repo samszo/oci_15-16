@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Modelisation',6],
+		  ['Java',4],
+		  ['Langage C',3],
+          ['Bootstrap',2],
+          ['Web Design',2],
+          ['PHP/HTML/CSS/javascript',4],
+          ['Base de données',6]
+        ]);
+
+        var options = {
+          //title:'Mes Competances'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 400px;"></div>
+  </body>
+</html>
