@@ -12,8 +12,6 @@
 
 	<script>
 
-	var color = d3.scale.ordinal()
-    .range(["#b9a7a6", "#ad9897", "#a28a88", "#967b79", "#8b6d6b", "#7d6260", "#6f5755", "#614c4a", "#534140", "#453635", "#372b2a", "#292020", "#1b1515", "#1e1312", "#170e0d"]);
 	
 	d3.csv("EtudiantsOCI15-16.csv", function(error, data) {
 	
@@ -29,10 +27,7 @@
 				.attr("width", 500)
 				.attr("height", 48)
 				.attr("y", function(d, i) {return i * 50;})
-				.style("fill", function(d) { 
-		var c = color(d.data['page Web / 20']);    	  
-    	  	return c; 
-    	  	});
+				.style("fill", "red")
 				
 				
 		canvas.selectAll("text")
