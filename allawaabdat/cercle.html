@@ -1,0 +1,33 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Language', 'programmation (in millions)'],
+['C', 70], ['C++', 60], ['Java', 60],
+['Lisp', 80], ['HTLM', 60], ['CSS', 50],
+['PHP', 50], ['Android', 70], ['Objective C', 50],
+['SQLite', 70], ['SQL', 80], ['MySQL', 80],
+['PhpMyAdmin', 90]
+]);
+var options = {
+title: 'Développement',
+legend: 'none',
+pieSliceText: 'label',
+slices: { 4: {offset: 0.2},
+12: {offset: 0.3},
+14: {offset: 0.4},
+15: {offset: 0.5},
+},
+};
+ 
+var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+chart.draw(data, options);
+}
+
+</script>
+
+
+
+<div id="piechart" style="width: 500px; height: 600px;"></div>
