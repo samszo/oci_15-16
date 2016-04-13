@@ -16,11 +16,11 @@
 	d3.csv("EtudiantsOCI15-16.csv", function(error, data) {
 	
 		if (error) throw error;
-		var canvas = d3.select("body").append("svg")
+		var g = d3.select("body").append("svg")
 			.attr("width",500)
 			.attr("height",800)
 		
-		canvas.selectAll("rect")
+		g.selectAll("rect")
 			.data(data)
 			.enter()
 				.append("rect")
@@ -30,7 +30,7 @@
 				.style("fill", "red")
 				
 				
-		canvas.selectAll("text")
+		g.selectAll("text")
 			.data(data)
 			.enter()
 				.append("text")
