@@ -46,10 +46,11 @@ rect:hover {  fill:blue; }
 <script>
 function dashboard(id, fData){
     var barColor = 'steelblue';
-    function segColor(c){ return {HTML:"#807dba", Javascript:"#e08214",Java:"#41ab5d",CSS:"#E60008",PHP:"#00E636",C:"#9900E6",SPIP:"#E600B8"}[c]; }
+    function segColor(c){ return {HTML:"#807dba", Javascript:"#e08214",Java:"#41ab5d",CSS:"#E60008",PHP:"#00E636",C:"#9900E6",SPIP:"#E600B8",Responsive:"#779094",
+	AJAX:"#4200B2",Web_Design:"#B2AC00",SQL:"#E9E103",Anglais:"#A22B4B",J2EE:"#B0AFC1",UML:"#1FA211",JOOMLA:"#A25511",Wordpress:"#8FB1FE",Drupal:"#910074"}[c]; }
     
     // compute total for each state.
-    fData.forEach(function(d){d.total=d.freq.HTML+d.freq.Javascript+d.freq.Java+d.freq.CSS+d.freq.PHP+d.freq.C+d.freq.SPIP;});
+    fData.forEach(function(d){d.total=d.freq.HTML+d.freq.Javascript+d.freq.Java+d.freq.CSS+d.freq.PHP+d.freq.C+d.freq.SPIP+d.freq.Responsive+d.freq.AJAX+d.freq.Web_Design+d.freq.SQL+d.freq.J2EE;});
     
     // function to handle histogram.
     function histoGram(fD){
@@ -244,7 +245,7 @@ function dashboard(id, fData){
     }
     
     // calculate total frequency by segment for all state.
-    var tF = ['HTML','Javascript','Java','CSS','PHP','C','SPIP'].map(function(d){ 
+    var tF = ['HTML','Javascript','Java','CSS','PHP','C','SPIP','Responsive','AJAX','Web Design','SQL','Anglais','J2EE'].map(function(d){ 
         return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     });    
     
@@ -274,12 +275,21 @@ var dataEtu;
 d3.csv("../data/EtudiantsOCI15-16.csv", null, function(error, data) {
 	freqData = [];
 	dataEtu = data;
-	var comp = {"j'men sors":12,"fort":15,"boffff":8,"pas très bon":10,"connais pas":2,"expert":18};
+	var comp = {"j'men sors":12,"fort":15,"boffff":8,"pas très bon":10,"connais pas":2,"expert":18,"trop fort":17};
 	data.forEach(function(d){
 		var args = {
 			State:d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase()
 			,freq:{HTML:comp[d["Vos compétences [HTML]"]], Javascript:comp[d["Vos compétences [Javascript]"]], Java:comp[d["Vos compétences [Java]"]],
-			CSS:comp[d["Vos compétences [CSS]"]],PHP:comp[d["Vos compétences [PHP]"]],C:comp[d["Vos compétences [C]"]],SPIP:comp[d["Vos compétences [SPIP]"]]}
+			CSS:comp[d["Vos compétences [CSS]"]],
+			PHP:comp[d["Vos compétences [PHP]"]],
+			C:comp[d["Vos compétences [C]"]],
+			SPIP:comp[d["Vos compétences [SPIP]"]],
+			Responsive:comp[d["Vos compétences [Responsive]"]],
+			AJAX:comp[d["Vos compétences [C]"]],
+			Web_Design:comp[d["Vos compétences [Web Design]"]],
+			SQL:comp[d["Vos compétences [SQL]"]],
+			Anglais:comp[d["Vos compétences [Anglais]"]],
+			J2EE:comp[d["Vos compétences [J2EE]"]]}
 		};
 		d.state = d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase();
 		freqData.push(args);		
