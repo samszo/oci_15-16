@@ -50,7 +50,7 @@ function dashboard(id, fData){
 	AJAX:"#4200B2",Web_Design:"#B2AC00",SQL:"#E9E103",Anglais:"#A22B4B",J2EE:"#B0AFC1",UML:"#1FA211",JOOMLA:"#A25511",Wordpress:"#8FB1FE",Drupal:"#910074"}[c]; }
     
     // compute total for each state.
-    fData.forEach(function(d){d.total=d.freq.HTML+d.freq.Javascript+d.freq.Java+d.freq.CSS+d.freq.PHP+d.freq.C+d.freq.SPIP+d.freq.Responsive+d.freq.AJAX+d.freq.Web_Design+d.freq.SQL+d.freq.J2EE;});
+    fData.forEach(function(d){d.total=d.freq.HTML+d.freq.Javascript+d.freq.Java+d.freq.CSS+d.freq.PHP+d.freq.C+d.freq.SPIP+d.freq.Responsive+d.freq.AJAX+d.freq.Web_Design+d.freq.SQL+d.freq.J2EE,+d.freq.UML+d.freq.JOOMLA+d.freq.Wordpress+d.freq.Drupal;});
     
     // function to handle histogram.
     function histoGram(fD){

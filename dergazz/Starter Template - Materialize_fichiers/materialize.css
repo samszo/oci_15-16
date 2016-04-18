@@ -2766,7 +2766,7 @@ table.hoverable tbody tr {
   transition: background-color 0.25s ease;
 }
 table.hoverable tbody tr:hover {
-  background-color: #f2f2f2;
+  background-color: #E60008;
 }
 table.centered thead tr th, table.centered tbody tr td {
   text-align: center;

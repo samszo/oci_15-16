@@ -1,22 +1,25 @@
 body {
-	background-color: #eee;
+	background-color: #D4C438;
+
 }
 #top-bar {
-	background: #3f51b5;
+
+	background:linear-gradient(white, #1E77DC);
 	height:200px;
-	float:left;
+	float:right;
 	width:100%;
-	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+	
+	box-shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
 .container {
 	position:relative;
 }
 .content {
-	background-color: #fff;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-	border-radius: 2px;
+	background-color: #C9E7ED;
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 2.26);
+	border-radius: 4px;
 	overflow: hidden;
-	z-index: 9;
+	z-index: 5;
 	margin-top: -120px;
 	margin-bottom:50px;
 }
@@ -28,7 +31,7 @@ img.circle {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
-	background-clip: padding-box;
+	background-clip: content-box;
 }
 i {
 	vertical-align:middle;
@@ -38,10 +41,10 @@ i {
 	line-height:18px;
 }
 .left-side .block {
-	margin-bottom:40px;
+	margin-bottom:10px;
 }
 .left-side .user-img {
-	width:70%;
+	width:80%;
 	display:block;
 	margin:0px auto;
 }
@@ -62,10 +65,10 @@ i {
 	height: 4px;
 	border-radius: 0;
 	box-shadow: none;
-	background: #c8c8c8;
+	background: #D4C438;
 }
 .progress .progress-bar, .progress .progress-bar-default {
-	background-color: #3f51b5;
+	background-color: #0219EA;
 }
 .progress-bar {
 	box-shadow: none;
@@ -82,7 +85,7 @@ i {
 	transition: width .6s ease;
 }
 .card .card-image img {
-	z-index:0;
+	z-index:0S;
 }
 .card .card-content span.card-title {
 	line-height: 48px;
@@ -92,7 +95,7 @@ i {
 .card .card-reveal {
 	padding: 16px;
 	position: absolute;
-	background-color: #FFF;
+background:linear-gradient(white, #1E77DC);
 	top: 100%;
 	height: 100%;
 	-webkit-box-sizing: border-box;
@@ -102,6 +105,7 @@ i {
 .card .card-reveal .card-title {
 	cursor: pointer;
 	display: block;
+	background:linear-gradient(white, #1E77DC);
 }
 .card .card-image span.card-title {
 	position: relative;
