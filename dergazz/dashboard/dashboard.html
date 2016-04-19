@@ -245,7 +245,7 @@ function dashboard(id, fData){
     }
     
     // calculate total frequency by segment for all state.
-    var tF = ['HTML','Javascript','Java','CSS','PHP','C','SPIP','Responsive','AJAX','Web Design','SQL','Anglais','J2EE'].map(function(d){ 
+    var tF = ['HTML','Javascript','Java','CSS','PHP','C','SPIP','Responsive','AJAX','Web Design','SQL','Anglais','J2EE','UML','JOOMLA','Wordpress','Drupal'].map(function(d){ 
         return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     });    
     
@@ -272,24 +272,32 @@ var freqData=[
 ,{State:'KS',freq:{low:162, mid:379, high:471}}
 ];
 var dataEtu;
-d3.csv("../data/EtudiantsOCI15-16.csv", null, function(error, data) {
+d3.csv("../dashboard/EtudiantsOCI15-16.csv", null, function(error, data) {
 	freqData = [];
 	dataEtu = data;
 	var comp = {"j'men sors":12,"fort":15,"boffff":8,"pas très bon":10,"connais pas":2,"expert":18,"trop fort":17};
 	data.forEach(function(d){
 		var args = {
 			State:d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase()
-			,freq:{HTML:comp[d["Vos compétences [HTML]"]], Javascript:comp[d["Vos compétences [Javascript]"]], Java:comp[d["Vos compétences [Java]"]],
+			,freq:{
+			HTML:comp[d["Vos compétences [HTML]"]], 
+			Javascript:comp[d["Vos compétences [Javascript]"]],
+			Java:comp[d["Vos compétences [Java]"]],
 			CSS:comp[d["Vos compétences [CSS]"]],
 			PHP:comp[d["Vos compétences [PHP]"]],
 			C:comp[d["Vos compétences [C]"]],
 			SPIP:comp[d["Vos compétences [SPIP]"]],
 			Responsive:comp[d["Vos compétences [Responsive]"]],
-			AJAX:comp[d["Vos compétences [C]"]],
+			AJAX:comp[d["Vos compétences [AJAX]"]],
 			Web_Design:comp[d["Vos compétences [Web Design]"]],
 			SQL:comp[d["Vos compétences [SQL]"]],
 			Anglais:comp[d["Vos compétences [Anglais]"]],
-			J2EE:comp[d["Vos compétences [J2EE]"]]}
+			J2EE:comp[d["Vos compétences [J2EE]"]],
+			UML:comp[d["Vos compétences [UML]"]],
+			JOOMLA:comp[d["Vos compétences [JOOMLA]"]],
+			Wordpress:comp[d["Vos compétences [Wordpress]"]],
+			Drupal:comp[d["Vos compétences [Drupal]"]],
+			}
 		};
 		d.state = d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase();
 		freqData.push(args);		
