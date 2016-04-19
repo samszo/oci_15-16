@@ -46,10 +46,19 @@ rect:hover {  fill:blue; }
 <script>
 function dashboard(id, fData){
     var barColor = 'steelblue';
-    function segColor(c){ return {HTML:"#807dba", Javascript:"#e08214",Java:"#41ab5d"}[c]; }
+    function segColor(c){ 
+        return {
+            HTML:"#807dba", 
+            Javascript:"#e08214",
+            Java:"#41ab5d"}[c]; 
+        }
     
     // compute total for each state.
-    fData.forEach(function(d){d.total=d.freq.HTML+d.freq.Javascript+d.freq.Java;});
+    fData.forEach(function(d){
+        d.total =   d.freq.HTML
+                    +d.freq.Javascript
+                    +d.freq.Java;}
+                    );
     
     // function to handle histogram.
     function histoGram(fD){
@@ -244,7 +253,10 @@ function dashboard(id, fData){
     }
     
     // calculate total frequency by segment for all state.
-    var tF = ['HTML','Javascript','Java'].map(function(d){ 
+    var tF = [
+        'HTML',
+        'Javascript',
+        'Java'].map(function(d){ 
         return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     });    
     
@@ -278,7 +290,10 @@ d3.csv("../data/EtudiantsOCI15-16.csv", null, function(error, data) {
 	data.forEach(function(d){
 		var args = {
 			State:d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase()
-			,freq:{HTML:comp[d["Vos compétences [HTML]"]], Javascript:comp[d["Vos compétences [Javascript]"]], Java:comp[d["Vos compétences [Java]"]]}
+			,freq:{
+                HTML:comp[d["Vos compétences [HTML]"]], 
+                Javascript:comp[d["Vos compétences [Javascript]"]], 
+                Java:comp[d["Vos compétences [Java]"]]}
 		};
 		d.state = d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase();
 		freqData.push(args);		
