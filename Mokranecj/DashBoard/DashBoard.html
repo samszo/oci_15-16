@@ -43,10 +43,10 @@ rect:hover {  fill:blue; }
 <script>
 function dashboard(id, fData){
     var barColor = 'steelblue';
-    function segColor(c){ return {C:"#E77C7C",Java:"#41ab5d",J2EE:"#DC143C",Anglais:"#40E0D0",SQL:"#9ACD32",Web_Design:"#EE82EE",Javascript:"#e08214",HTML:"#807dba",CSS:"#4682B4",PHP:"#6B8E23",AJAX:"#FF4500",Responsive:"#FF1493",UML:"#FFA07A",JOOMLA:"#778899",Wordpress:"#ADFF2F",Drupal:"#D2691E",SPIP:"#006400"}[c]; }
-  
+    function segColor(c){ return {Java:"#41ab5d",C:"#E77C7C",J2EE:"#DC143C",Anglais:"#40E0D0",SQL:"#9ACD32",Web_Design:"#EE82EE",Javascript:"#e08214",HTML:"#807dba",CSS:"#4682B4",PHP:"#6B8E23",AJAX:"#FF4500",Responsive:"#FF1493",UML:"#FFA07A",JOOMLA:"#778899",Wordpress:"#ADFF2F",Drupal:"#D2691E",SPIP:"#006400"}[c]; }
+                                
     // compute total for each state.
-    fData.forEach(function(d){d.total=d.freq.C+d.freq.Java+d.freq.J2EE+d.freq.Anglais+d.freq.SQL+d.freq.Web_Design+d.freq.Javascript+d.freq.HTML+d.freq.CSS+d.freq.PHP+d.freq.AJAX+d.freq.Responsive+d.freq.UML+d.freq.JOOMLA+d.freq.Wordpress+d.freq.Drupal+d.freq.SPIP;});
+    fData.forEach(function(d){d.total=d.freq.Java+d.freq.C+d.freq.J2EE+d.freq.Anglais+d.freq.SQL+d.freq.Web_Design+d.freq.Javascript+d.freq.HTML+d.freq.CSS+d.freq.PHP+d.freq.AJAX+d.freq.Responsive+d.freq.UML+d.freq.JOOMLA+d.freq.Wordpress+d.freq.Drupal+d.freq.SPIP;});
     
     // function to handle histogram.
     function histoGram(fD){
@@ -225,7 +225,7 @@ function dashboard(id, fData){
     }
     
     // calculate total frequency by segment for all state.
-    var tF = ['C','Java','J2EE','Anglais','SQL','Web_Design','Javascript','HTML','CSS','PHP','AJAX','Responsive','UML','JOOMLA','Wordpress','Drupal','SPIP'].map(function(d){ 
+    var tF = ['Java','C','J2EE','Anglais','SQL','Web_Design','Javascript','HTML','CSS','PHP','AJAX','Responsive','UML','JOOMLA','Wordpress','Drupal','SPIP'].map(function(d){ 
         return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     });    
     
@@ -259,14 +259,14 @@ d3.csv("../DashBoard/EtudiantsOCI15-16.csv", null, function(error, data) {
 		var args = {
 			State:d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase()
 			,freq:{
-			C:comp[d["Vos compétences [C]"]],
+			HTML:comp[d["Vos compétences [HTML]"]], 
+			Javascript:comp[d["Vos compétences [Javascript]"]],
 			Java:comp[d["Vos compétences [Java]"]],
+			C:comp[d["Vos compétences [C]"]],
 			J2EE:comp[d["Vos compétences [J2EE]"]],
 			Anglais:comp[d["Vos compétences [Anglais]"]],
 			SQL:comp[d["Vos compétences [SQL]"]],
 			Web_Design:comp[d["Vos compétences [Web Design]"]],
-			Javascript:comp[d["Vos compétences [Javascript]"]],
-			HTML:comp[d["Vos compétences [HTML]"]], 
 			CSS:comp[d["Vos compétences [CSS]"]],
 			PHP:comp[d["Vos compétences [PHP]"]],
 			AJAX:comp[d["Vos compétences [AJAX]"]],
@@ -276,7 +276,6 @@ d3.csv("../DashBoard/EtudiantsOCI15-16.csv", null, function(error, data) {
 			Wordpress:comp[d["Vos compétences [Wordpress]"]],
 			Drupal:comp[d["Vos compétences [Drupal]"]],
 			SPIP:comp[d["Vos compétences [SPIP]"]],
-			
 			}
 		};
 		d.state = d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase();
