@@ -56,7 +56,7 @@ function dashboard(id, fData){
     function histoGram(fD){
         var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
         hGDim.w = 500 - hGDim.l - hGDim.r, 
-        hGDim.h = 300 - hGDim.t - hGDim.b;
+        hGDim.h = 400 - hGDim.t - hGDim.b;
             
         //create svg for histogram.
         var hGsvg = d3.select(id).append("svg")
@@ -120,8 +120,8 @@ function dashboard(id, fData){
         
         function mouseout(d){    // utility function to be called on mouseout.
 	    		//met à jour le titre de la légende
-			d3.select("#sltEtu").text("---");
-			d3.select("#mailEtu").text("---");
+			d3.select("#sltEtu").text("L3 Pro OCI");
+			d3.select("#mailEtu").text("l3p-2015-16@mime.univ-paris8.fr");
 
         		// reset the pie-chart and legend.    
             pC.update(tF);
@@ -152,7 +152,7 @@ function dashboard(id, fData){
     
     // function to handle pieChart.
     function pieChart(pD){
-        var pC ={},    pieDim ={w:250, h: 250};
+        var pC ={},    pieDim ={w:300, h: 300};
         pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
                 
         // create svg for pie chart.
@@ -210,8 +210,8 @@ function dashboard(id, fData){
         var tr = legend.append("tbody").selectAll("tr").data(lD).enter().append("tr");
             
         // create the first column for each segment.
-        tr.append("td").append("svg").attr("width", '16').attr("height", '16').append("rect")
-            .attr("width", '16').attr("height", '16')
+        tr.append("td").append("svg").attr("width", '15').attr("height", '15').append("rect")
+            .attr("width", '15').attr("height", '15')
 			.attr("fill",function(d){ return segColor(d.type); });
             
         // create the second column for each segment.
