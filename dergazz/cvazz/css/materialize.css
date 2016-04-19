@@ -20,6 +20,7 @@ body {
   margin: 0;
 }
 
+
 /* HTML5 display definitions
    ========================================================================== */
 /**
@@ -7189,6 +7190,7 @@ ul.collapsible {
 
 .materialboxed.active {
   cursor: zoom-out;
+  
 }
 
 #materialbox-overlay {
