@@ -47,7 +47,7 @@ rect:hover {  fill:blue; }
 function dashboard(id, fData){
     var barColor = 'steelblue';
     function segColor(c){ return {HTML:"#807dba", Javascript:"#e08214",Java:"#41ab5d",CSS:"#E60008",PHP:"#00E636",C:"#9900E6",SPIP:"#E600B8",Responsive:"#779094",
-	AJAX:"#4200B2",Web_Design:"#B2AC00",SQL:"#E9E103",Anglais:"#A22B4B",J2EE:"#B0AFC1",UML:"#1FA211",JOOMLA:"#A25511",Wordpress:"#8FB1FE",Drupal:"#910074"}[c]; }
+	AJAX:"#4200B2",Web_Design:"#000101",SQL:"#E9E103",Anglais:"#A22B4B",J2EE:"#B0AFC1",UML:"#1FA211",JOOMLA:"#A25511",Wordpress:"#8FB1FE",Drupal:"#910074"}[c]; }
     
     // compute total for each state.
     fData.forEach(function(d){d.total=d.freq.HTML+d.freq.Javascript+d.freq.Java+d.freq.CSS+d.freq.PHP+d.freq.C+d.freq.SPIP+d.freq.Responsive+d.freq.AJAX+d.freq.Web_Design+d.freq.SQL+d.freq.J2EE,+d.freq.UML+d.freq.JOOMLA+d.freq.Wordpress+d.freq.Drupal;});
@@ -245,7 +245,7 @@ function dashboard(id, fData){
     }
     
     // calculate total frequency by segment for all state.
-    var tF = ['HTML','Javascript','Java','CSS','PHP','C','SPIP','Responsive','AJAX','Web Design','SQL','Anglais','J2EE','UML','JOOMLA','Wordpress','Drupal'].map(function(d){ 
+    var tF = ['HTML','Javascript','Java','CSS','PHP','C','SPIP','Responsive','AJAX','Web_Design','SQL','Anglais','J2EE','UML','JOOMLA','Wordpress','Drupal'].map(function(d){ 
         return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     });    
     
