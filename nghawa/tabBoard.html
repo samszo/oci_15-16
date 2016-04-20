@@ -247,7 +247,7 @@ function dashboard(id, fData){
     }
     
     // calculate total frequency by segment for all state.
-    var tF = ['HTML','Javascript','Java'].map(function(d){  
+    var tF = ['HTML','SPIP','Drupal','anglais','Wordpress','JOOMLA','UML','Responsive','Javascript','C','Java'].map(function(d){  
         return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     });    
     
@@ -282,9 +282,15 @@ var freqData=[
 	data.forEach(function(d){
 		var args = {
 			State:d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase()
-			,freq:{HTML:comp[d["Vos compétences [HTML]"]], Javascript:comp[d["Vos compétences [Javascript]"]], Java:comp[d["Vos compétences [Java]"]]}
+			,freq:{HTML:comp[d["Vos compétences [HTML]"]], SPIP:comp[d["Vos compétences [SPIP]"]], 
+			Drupal:comp[d["Vos compétences [Drupal]"]], Anglais:comp[d["Vos compétences [Anglais]"]], 
+			Wordpress:comp[d["Vos compétences [Wordpress]"]], JOOMLA:comp[d["Vos compétences [JOOMLA]"]],
+			UML:comp[d["Vos compétences [UML]"]], Responsive:comp[d["Vos compétences [Responsive]"]], 
+			Javascript:comp[d["Vos compétences [Javascript]"]],C:comp[d["Vos compétences [C]"]],
+			Java:comp[d["Vos compétences [Java]"]]}
 		};
-		d.state = d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase();
+		d.state = d["Nom"].substring(0,1).toUpperCase()+" "+d
+		["Prénom"].substring(0,1).toUpperCase();
 		freqData.push(args);		
 	});
 	
