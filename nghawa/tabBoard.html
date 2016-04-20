@@ -37,13 +37,18 @@ rect:hover {  fill:blue; }
 
 </style>
 <body>
+<br>
+<a href="pagePrincipale.html" ><center>RETOUR</center></</a><br>
+<h1>Les compétences des étudiants OCI 15 16</h1>
+<h2 id="sltEtu"></h2>
+<p id="mailEtu"></p>
 <div id='dashboard'>
 </div>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 function dashboard(id, fData){
     var barColor = 'steelblue';
-    function segColor(c){ return {low:"#807dba", mid:"#e08214",high:"#41ab5d"}[c]; }
+    function segColor(c){ return {HTML:"#807dba", Javascript:"#e08214",Java:"#41ab5d"}[c]; }
     
     // compute total for each state.
     fData.forEach(function(d){d.total=d.freq.low+d.freq.mid+d.freq.high;});
@@ -94,6 +99,17 @@ function dashboard(id, fData){
             .attr("text-anchor", "middle");
         
         function mouseover(d){  // utility function to be called on mouseover.
+		
+			//met à jour le titre de la légende
+	    		var etu = dataEtu.filter(function(e){
+	    			return e.state == d[0];
+	    			});
+        		if(etu[0]){
+        			etu = etu[0];
+        			d3.select("#sltEtu").text(etu["Prénom"]+' '+etu["Nom"]+' : '+etu["N° étudiant"]);
+        			d3.select("#mailEtu").text(etu["E-mail"]);        			
+        		}
+				
             // filter for selected state.
             var st = fData.filter(function(s){ return s.State == d[0];})[0],
                 nD = d3.keys(st.freq).map(function(s){ return {type:s, freq:st.freq[s]};});
@@ -104,6 +120,11 @@ function dashboard(id, fData){
         }
         
         function mouseout(d){    // utility function to be called on mouseout.
+		
+			//met à jour le titre de la légende
+			d3.select("#sltEtu").text("---");
+			d3.select("#mailEtu").text("---");
+			
             // reset the pie-chart and legend.    
             pC.update(tF);
             leg.update(tF);
@@ -226,7 +247,7 @@ function dashboard(id, fData){
     }
     
     // calculate total frequency by segment for all state.
-    var tF = ['low','mid','high'].map(function(d){ 
+    var tF = ['HTML','Javascript','Java'].map(function(d){  
         return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     });    
     
@@ -253,5 +274,22 @@ var freqData=[
 ,{State:'KS',freq:{low:162, mid:379, high:471}}
 ];
 
-dashboard('#dashboard',freqData);
+    var dataEtu;
+	d3.csv("../data/EtudiantsOCI15-16.csv", null, function(error, data) {
+	freqData = [];
+	dataEtu = data;
+	var comp = {"j'men sors":12,"fort":15,"boffff":8,"pas très bon":10,"connais pas":2,"expert":18};
+	data.forEach(function(d){
+		var args = {
+			State:d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase()
+			,freq:{HTML:comp[d["Vos compétences [HTML]"]], Javascript:comp[d["Vos compétences [Javascript]"]], Java:comp[d["Vos compétences [Java]"]]}
+		};
+		d.state = d["Nom"].substring(0,1).toUpperCase()+" "+d["Prénom"].substring(0,1).toUpperCase();
+		freqData.push(args);		
+	});
+	
+	dashboard('#dashboard',freqData);
+
+});
+
 </script>
