@@ -8995,6 +8995,30 @@ ul.table-of-contents a.active {
 /**
  * The frame the bounds the time picker.
  */
+ 
+ .mfipsen 
+{ 
+font-size: 15; 
+font-family: Time new romain;
+
+line-height:10px; 
+} 
+.mfbcof 
+{ 
+font-size: 15; 
+font-family: Time new romain;
+font-size-adjust:auto;
+color: ;
+line-height:11px; 
+} 
+.mflicence
+{ 
+font-size: 15; 
+font-family: Time new romain;
+font-size-adjust:auto;
+color: ;
+line-height:11px; 
+} 
 .picker--time .picker__frame {
   min-width: 256px;
   max-width: 320px;
