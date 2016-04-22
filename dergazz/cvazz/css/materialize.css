@@ -9000,7 +9000,7 @@ ul.table-of-contents a.active {
 { 
 font-size: 15; 
 font-family: Time new romain;
-
+color: ;
 line-height:10px; 
 } 
 .mfbcof 
@@ -9009,7 +9009,7 @@ font-size: 15;
 font-family: Time new romain;
 font-size-adjust:auto;
 color: ;
-line-height:11px; 
+line-height:10px; 
 } 
 .mflicence
 { 
@@ -9017,7 +9017,25 @@ font-size: 15;
 font-family: Time new romain;
 font-size-adjust:auto;
 color: ;
-line-height:11px; 
+line-height:10px; 
+} 
+.mflicence1
+{ 
+font-size: 15; 
+font-family: Time new romain;
+font-size-adjust:auto;
+color: ;
+line-height:10px; 
+} 
+.mfdea
+{ 
+font-size: 15; 
+font-family: Time new romain;
+font-size-adjust:auto;
+color: ;
+line-height:12px; 
+} 
+ne-height:11px; 
 } 
 .picker--time .picker__frame {
   min-width: 256px;
