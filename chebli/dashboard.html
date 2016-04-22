@@ -78,7 +78,10 @@ function dashboard(id, fData){
         }
     
     // compute total for each state.
-    fData.forEach(function(d){d.total=d.freq.C+d.freq.J2EE+d.freq.Anglais;});
+    fData.forEach(function(d){
+	d.total=   d.freq.C
+	           +d.freq.J2EE
+			   +d.freq.Anglais;});
     
     // function to handle histogram.
     function histoGram(fD){
@@ -127,6 +130,16 @@ function dashboard(id, fData){
         
         function mouseover(d){  // utility function to be called on mouseover.
             // filter for selected state.
+			
+			var etu = dataEtu.filter(function(e){
+	    			return e.state == d[0];
+	    			});
+        		if(etu[0]){
+        			etu = etu[0];
+        			d3.select("#sltEtu").text(etu["Prénom"]+' '+etu["Nom"]+' : '+etu["N° étudiant"]);
+        			d3.select("#mailEtu").text(etu["E-mail"]);        			
+        		}
+		
             var st = fData.filter(function(s){ return s.State == d[0];})[0],
                 nD = d3.keys(st.freq).map(function(s){ return {type:s, freq:st.freq[s]};});
                
@@ -136,7 +149,10 @@ function dashboard(id, fData){
         }
         
         function mouseout(d){    // utility function to be called on mouseout.
-            // reset the pie-chart and legend.    
+            // reset the pie-chart and legend. 
+            d3.select("#sltEtu").text("---");
+			d3.select("#mailEtu").text("---");
+
             pC.update(tF);
             leg.update(tF);
         }
@@ -258,10 +274,12 @@ function dashboard(id, fData){
     }
     
     // calculate total frequency by segment for all state.
-    var tF = ['C','J2EE','Anglais'].map(function(d){ 
+    var tF = [
+        'C',
+        'J2EE',
+        'Anglais'].map(function(d){ 
         return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     });    
-    
     // calculate total frequency by state for all segment.
     var sF = fData.map(function(d){return [d.State,d.total];});
 
@@ -273,44 +291,21 @@ function dashboard(id, fData){
 
 <script>
 var freqData=[
-{State:'ch ouerdia',freq:{C:4786, J2EE:1319, Anglais:249}}
-,{State:'AZ',freq:{C:1101, J2EE:412, Anglais:674}}
-,{State:'CT',freq:{C:932, J2EE:2149,Anglais:418}}
-,{State:'DE',freq:{C:832, J2EE:1152, Anglais:1862}}
-,{State:'FL',freq:{C:4481, J2EE:3304, Anglais:948}}
-,{State:'GA',freq:{C:1619, J2EE:167, Anglais:1063}}
-,{State:'IA',freq:{C:1819, J2EE:247, Anglais:1203}}
-,{State:'IL',freq:{C:4498, J2EE:3852, Anglais:942}}
-,{State:'IN',freq:{C:797, J2EE:1849, Anglais:1534}}
-,{State:'KS',freq:{C:162, J2EE:379, Anglais:471}}
+{State:'ch oue',freq:{C:4786, J2EE:1319, Anglais:249}}
+,{State:'gh kha',freq:{C:1101, J2EE:412, Anglais:674}}
+,{State:'ng hoa',freq:{C:932, J2EE:2149,Anglais:418}}
+,{State:'sa ham',freq:{C:832, J2EE:1152, Anglais:1862}}
+,{State:'ab all',freq:{C:4481, J2EE:3304, Anglais:948}}
+,{State:'la sal',freq:{C:1619, J2EE:167, Anglais:1063}}
+,{State:'de azz',freq:{C:1819, J2EE:247, Anglais:1203}}
+,{State:'de teo',freq:{C:4498, J2EE:3852, Anglais:942}}
+,{State:'all mok',freq:{C:797, J2EE:1849, Anglais:1534}}
+,{State:'da yas',freq:{C:162, J2EE:379, Anglais:471}}
 ];
 
 dashboard('#dashboard',freqData);
 </script>
-<div id="diigo-chrome-installed" style="display: none;"></div>
-<div class="diigolet notice" id="diigolet-notice" style="display: none;">
-<div><b>&nbsp;</b><p>Ok, done!</p><span id="close"></span></div></div>
-<div id="diigolet-dlg-sticky" style="position: absolute; left: 100px; top: 100px; display: none;" class="diigolet diigoletFN yellow">
-<div id="diigolet-dlg-sticky-top" class="_dragHandle" style="cursor: move;">
-<span id="diigolet-dlg-sticky-close"></span><span id="diigolet-dlg-sticky-color">
-<div id="diigolet-dlg-sticky-currentColor" title="change color"></div>
-<div id="diigolet-dlg-sticky-colorPicker">
-<b color="yellow" id="diigolet-dlg-yellow" class="dlg-colorItem colorchecked"><b></b></b>
-<b color="blue" id="diigolet-dlg-blue" class="dlg-colorItem"><b></b></b><b color="green" id="diigolet-dlg-green" class="dlg-colorItem"><b></b></b>
-<b color="pink" id="diigolet-dlg-pink" class="dlg-colorItem"><b></b></b></div></span><span id="diigolet-dlg-sticky-addTab"></span></div>
-<div id="diigolet-dlg-sticky-content" class="private">
-<div id="diigolet-dlg-sticky-switcher"><span class="FN-switcher" id="FN-switcher-private"><b></b>Private</span><span class="FN-switcher" id="FN-switcher-group"><b></b>Group</span></div>
-<div class="FN-content-wrapper private"><textarea id="FN-private-editor" placeholder="Input here..."></textarea><div id="FN-content-footer">
-<div id="editDone"><span id="FN-private-delete"><b></b></span><span id="FN-private-datetime"></span></div>
-<div id="editing"><a href="javascript:void(0)" id="FN-private-saveBtn">Save</a><a href="javascript:void(0)" id="FN-private-cancelBtn">Cancel</a></div></div></div>
-<div class="FN-content-wrapper group"><div><div id="FN-group-content-nav"><span id="FN-current-group"><span>+Share to a new group</span><b></b></span>
-<div id="FN-group-menu"><ul id="FN-group-ul"></ul><ul id="FN-group-share-new-ul"><li id="FN-group-share-new">+Share to a new group</li></ul></div></div>
-<div id="FN-post-form" class="">
-<div><textarea id="FN-group-post" placeholder="write a comment..."></textarea></div>
-<div><select id="FN-group-share"></select><button><span class="button-label">Post</span><span class="button-spinner"></span></button>
-<a href="javascript:void(0)">Cancel</a></div></div><div id="FN-group-content"><div id="FN-group-content-container"></div>
 
-<div id="FN-group-content-postform"><textarea placeholder="Write a comment..."></textarea><div class="post-action"><button><span class="button-label">Post</span><span class="button-spinner"></span></button><a href="javascript:void(0)">Cancel</a></div></div></div></div></div></div></div><div id="diigolet-csm" class="yellow" style="position: absolute; display: none;"><div id="diigolet-csm-research-mode"></div><div id="diigolet-csm-highlight-wrapper" class="csm-btn"><a id="diigolet-csm-highlight" class="csm-action" href="javascript:void(0);"></a><div class="diigolet-csm-color small hidden" style="height: 0px;"><a class="diigolet-csm-coloritem yellow" data-color="yellow" style="height: 0px;"></a><a class="diigolet-csm-coloritem blue" data-color="blue" style="height: 0px;"></a><a class="diigolet-csm-coloritem green" data-color="green" style="height: 0px;"></a><a class="diigolet-csm-coloritem pink" data-color="pink" style="height: 0px;"></a></div></div><div id="diigolet-csm-highlightAndComment-wrapper" class="csm-btn"><a id="diigolet-csm-highlightAndComment" class="csm-action" href="javascript:void(0);"></a><div class="diigolet-csm-color small hidden" style="height: 0px;"><a class="diigolet-csm-coloritem yellow" data-color="yellow" style="height: 0px;"></a><a class="diigolet-csm-coloritem blue" data-color="blue" style="height: 0px;"></a><a class="diigolet-csm-coloritem green" data-color="green" style="height: 0px;"></a><a class="diigolet-csm-coloritem pink" data-color="pink" style="height: 0px;"></a></div></div><a id="diigolet-csm-search" class="csm-action" href="javascript:void(0);"></a>
 </div>
 </body>
 </html>
