@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Développeur Informatique</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!--<style>
+
+    .arc text {
+    font: 10px sans-serif;
+    text-anchor: middle;
+    }
+
+    .arc path {
+    stroke: #fff;
+    }
+
+    </style> -->
+
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Language', 'programmation (in millions)'],
+          ['C', 70], ['C++', 60], ['Java', 60],
+          ['Lisp', 80], ['HTLM', 60], ['CSS', 50],
+          ['PHP', 50], ['Android', 70], ['Objective C', 50],
+          ['SQLite', 70], ['SQL', 80], ['MySQL', 80],
+          ['PhpMyAdmin', 90]
+        ]);
+
+        var options = {
+          title: 'Développement',
+          legend: 'none',
+          pieSliceText: 'label',
+          slices: {  4: {offset: 0.2},
+                    12: {offset: 0.3},
+                    14: {offset: 0.4},
+                    15: {offset: 0.5},
+          },
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">Accueil</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                	
+                    <li>
+                        <a href="#about">Informations personnelles</a>
+                    </li>
+                    <li>
+                        <a href="#formations">Formations</a>
+                    </li>
+                     <li>
+                        <a href="#competences">Compétences</a>
+                    </li>
+                    <li>
+                        <a href="#projets">Projets universitaires</a>
+                    </li>
+                     <li>
+                        <a href="#experiences">Expériences professionnelles</a>
+                    </li>
+                    <li>
+                        <a href="#burolangues">Bureautique et langues</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="accueil"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Ngoc Hoan NGUYEN</h1>
+                        <h4>En recherche de stage</h4>
+
+                        <div class="competence">
+                        	<h3>Développeur Informatique</h3>
+                        </div>
+
+                        <div class="clearfix"></div>
+ <div class="col-lg-12">
+ <hr class="intro-divider">
+                    <ul class="list-inline intro-social-buttons">
+                        <li>
+                            <a href="https://www.diigo.com/user/nguyenngochoan" class="btn btn-default btn-lg"><i class="fa fa-delicious fa-fw"></i> <span class="network-name">Diigo</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/nguyenngochoan/" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/ngoc-hoan-nguyen-42a35610b?trk=hp-identity-name" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+ <a name="about"></a>
+    <div class="content-section-a">
+     <div class="container">
+        <div class="section-heading"> <h3> Informations personnelles </h3>
+            <div class="col-lg-12">
+                 <div class="row">
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <h4>Intéressé par les technologies innovantes</h4>
+                    <h4>Films d'arts martiaux.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <a  name="competences"></a>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="well-sm">
+                <div class="col s12 m4 left-side"> 
+                    <div class="col-lg-5  col-sm-6">
+     
+      	                 <h5 class="left-align"></h5>
+<!--   
+<div class="section-heading"> <h3> Développement: </h3>  
+        <h4> Langage C </h4> 
+        <div class="progress">
+					<div class="progress-bar" style="width: 60%;"></div>
+           </div>
+         <h4> C++
+         <div class="progress">
+					<div class="progress-bar" style="width: 60%;"></div>
+           </div>
+           
+            Java
+            <div class="progress">
+					<div class="progress-bar" style="width: 50%;"></div>
+           </div>
+            Android
+            <div class="progress">
+					<div class="progress-bar" style="width: 70%;"></div>
+           </div>
+            Objective-C
+            <div class="progress">
+					<div class="progress-bar" style="width: 40%;"></div>
+           </div> PHP
+           <div class="progress">
+					<div class="progress-bar" style="width: 50%;"></div>
+           </div>
+            HTML
+            <div class="progress">
+					<div class="progress-bar" style="width: 60%;"></div>
+           </div> 
+           CSS
+           <div class="progress">
+					<div class="progress-bar" style="width: 60%;"></div>
+           </div>
+            Lisp 
+            <div class="progress">
+					<div class="progress-bar" style="width: 80%;"></div>
+           </div><br></h4>
+        </div>
+
+      </div>
+      </div>
+-->
+<h3 class="section-heading">Développement : </h3>
+ <div id="piechart" style="width: 500px; height: 600px;"></div>
+
+<!--
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+-->
+<!--
+<script src="//d3js.org/d3.v3.min.js"></script>
+    <script>
+
+    var width = 960,
+    height = 500,
+    radius = Math.min(width, height) / 2;
+
+    var color = d3.scale.ordinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+    var arc = d3.svg.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(0);
+
+    var labelArc = d3.svg.arc()
+    .outerRadius(radius - 40)
+    .innerRadius(radius - 40);
+
+    var pie = d3.layout.pie()
+    .sort(null)
+    .value(function(d) { 
+         return d['page Web / 20']; });
+
+    var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    //d3.csv("data.csv", type, function(error, data) {
+    d3.csv("data.csv", type, function(error, data){
+    if (error) throw error;
+
+    var g = svg.selectAll(".arc")
+      .data(pie(data))
+    .enter().append("g")
+      .attr("class", "arc");
+
+    g.append("path")
+      .attr("d", arc)
+      .style("fill", function(d) { 
+       var c = color(d.data['Vos compétences']);          
+            return c;  });
+
+    g.append("text")
+      .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+      .attr("dy", ".35em")
+      .text(function(d) { 
+         var txt = d.data['Nom du compte GitHUB '];       
+            return txt;  
+    });
+
+    function type(d) {
+    d.population = +d.population;
+    return d;
+    }
+
+    </script>
+    <svg width="960" height="500">
+    <g transform="translate(480,250)">
+    <g class="arc"><path d="M1.469576158976824e-14,-240A240,240 0 0,1 107.0492887034484,-214.803281604555L0,0Z" style="fill: rgb(152, 171, 197);"></path><text transform="translate(48.113911736435526,-204.41392197553103)" dy=".35em">&lt;5</text></g>
+    <g class="arc"><path d="M107.0492887034484,-214.803281604555A240,240 0 0,1 226.32103905324743,-79.86731047092076L0,0Z" style="fill: rgb(138, 137, 166);"></path><text transform="translate(157.34405840318342,-139.07856515371307)" dy=".35em">5-13</text></g>
+    <g class="arc"><path d="M226.32103905324743,-79.86731047092076A240,240 0 0,1 239.89217619670538,7.193316315084522L0,0Z" style="fill: rgb(123, 104, 136);"></path><text transform="translate(207.49417749449054,-32.34449421284646)" dy=".35em">14-17</text></g>
+    <g class="arc"><path d="M239.89217619670538,7.193316315084522A240,240 0 0,1 185.29089011249533,152.53617945038215L0,0Z" style="fill: rgb(107, 72, 107);"></path><text transform="translate(196.58564250968948,73.85177830663643)" dy=".35em">18-24</text></g>
+    <g class="arc"><path d="M185.29089011249533,152.53617945038215A240,240 0 0,1 -239.7935922865823,9.951537484044003L0,0Z" style="fill: rgb(160, 93, 86);"></path><text transform="translate(-66.78280177123042,199.0981099548274)" dy=".35em">25-44</text></g>
+    <g class="arc"><path d="M-239.7935922865823,9.951537484044003A240,240 0 0,1 -25.080788568417415,-238.68588991556737L0,0Z" style="fill: rgb(208, 116, 60);"></path><text transform="translate(-158.9390039857519,-137.25302551134214)" dy=".35em">45-64</text></g>
+    <g class="arc"><path d="M-25.080788568417415,-238.68588991556737A240,240 0 0,1 -2.5725010549733476e-13,-240L0,0Z" style="fill: rgb(255, 140, 0);"></path><text transform="translate(-10.987896250295181,-209.712341401246)" dy=".35em">≥65</text></g></g>
+    </svg>
+
+    -->
+</div>
+</div>
+
+
+
+<!--
+
+      <h3 class="section-heading">Base de données : </h3>
+        <h4> MyQSL, SQL, SQLite <br></h4>
+     -->   
+
+         <h3 class="section-heading">Outils : </h3>
+        <h4> Eclipse, Xcode, Android Studio, PhpMyAdmin, Code::Blocks, LAMP, XAMP </h4>
+        
+
+         <h3 class="section-heading">OS :</h3>
+        <h4> Linux, Mac OS X, Windows </h4>
+      
+        
+           </div>
+          </div>
+      </div>
+        </div>               
+                  
+
+	<a  name="formations"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">2015/2016<br>Licence professionnelle Objets communicants intelligents</h2>
+                    <p class="lead">Université PARIS VIII - Vincennes Saint-Denis</p>
+                    
+                     <h2 class="section-heading">2014/2015<br>Licence informatique 2ème année</h2>
+                    <p class="lead">Université PARIS VIII - Vincennes Saint-Denis</p>
+                    
+                     <h2 class="section-heading">2013/2014<br>Licence informatique 1ème année</h2>
+                    <p class="lead">Université PARIS VIII - Vincennes Saint-Denis</p>
+                    
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/logop8.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+
+
+
+    <!-- Page Content -->
+
+	<a  name="projets"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+          
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">2015 </h2>
+                    <p class="lead"> 
+                    <h3>Réalisation d’une application Androïd "partage de photos" entre les utilisateur utilisant cette même application</h3>
+                   
+ 
+ <p class="lead">- Utilisant une base de donné MySQL,Java, PHP, SQLite, Android Studio <br/>- Utilisant ImageButton, TextView, EditText, ListView, Appareil Photo, Notification..</p>
+
+<h3>Programmation IOS de transfert de données via le storyboard</h3>
+
+ <p class="lead">- Créant Navigation Controller dans storyBoard <br/>- Ajoutant TableView pour les données <br/>- Établissant une connexion entre variable et IU outlet <br/>- Transfert de données de l'aide Segue - Utilisant Objective-C</p>
+
+<h3>Réalisation en C d’un jeu de cartes "6 qui prend!" qui est un jeu de cartes tactique pour 2 à 10 joueurs. </h3>
+
+ <p class="lead">- Utilisant structure, pointeur, tableaux <br/>- Générant ses documentations HTLM par Doxygen</p>
+
+<h2 class="section-heading">2014 </h2>
+<h3> Réalisation en C++ d’un programme "Jeu d'échec"</h3>
+ 
+ <p class="lead">- Utilisant les concepts de programmation d'orienté objet, classe, attributs, méthodes, héritage, polymorphisme</p>
+
+<h3>Réalisation en C d’un programme "Réseau de métro" qui donne le trajet entre le départ et l'arrivée.</h3>
+
+ <p class="lead">- Utilisant Structure, pointeur, Liste chainée, ...</p>
+
+<h2 class="section-heading">2013 </h2>
+<h3>Réalisation en C d'un jeu d'Othello-Reversi en mode console.</h3>
+
+ <p class="lead">- Utilisant tableaux, chaîne de caractères, ...</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/phones.png" alt="">
+                </div>
+            </div>
+  
+        </div>
+        <!-- /.container -->
+
+  
+    <!-- /.content-section-a -->
+
+
+
+
+    <!-- Page Content -->
+
+	<a  name="experiences"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Employé de vente polyvalent</h2>
+                    <h3> Avril 2011 à Janvier 2016</h3>
+                    <p class="lead">
+ 
+<br/>- Caissier,
+
+<br/>- Manipulation de charges, mise en rayon,
+
+<br/>- Inventaire de produits, commandes de marchandises,
+
+<br/>- Nettoyage de locaux,</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/caissier.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+     
+	<a  name="burolangues"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    
+                     
+         <h3 class="section-heading">Bureautique :</h3>
+         <p class="lead"><h4> Word, Exel, PowerPoint</h4></p>
+       
+        
+        <h3 class="section-heading">Langues:</h3>
+          <p class="lead"> <h4> Anglais, Vietnamien</h4></p>
+       
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+
+
+	<a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Ngoc Hoan NGUYEN</h2>
+                    <p><i class="mdi-maps-pin-drop indigo-text"></i> 3 Rue Gilbert Bonnemaison <br/> 93800 épinay sur seine<br/>
+					<p><i class="mdi-communication-phone fa fa-phone indigo-text"></i>  06 35 19 24 75<br/></p>
+					<p><i class="mdi-communication-email indigo-text"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:n.nhoan.p8@gmail.com" target="_blank">n.nhoan.p8@gmail.com</a><br/></p>
+					<i class="fa fa-link" aria-hidden="true"></i> <a href="http://www.nguyenngochoan.xyz/" target="_blank">http://www.nguyenngochoan.xyz/</a>
+					</p>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://www.diigo.com/user/nguyenngochoan" class="btn btn-default btn-lg"><i class="fa fa-delicious fa-fw"></i> <span class="network-name">Diigo</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/nguyenngochoan/" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/ngoc-hoan-nguyen-42a35610b?trk=hp-identity-name" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Accueil</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">Informations personnelles</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#formations">Formations</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                        	<a href="#competences">Compétences</a> 
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>   
+                          <li>
+                            <a href="#projets">Projets universitaires</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                         <li>
+                            <a href="#experiences">Expériences professionnelles</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#burolangues">Bureautique et langues</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

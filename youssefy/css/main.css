@@ -1,0 +1,72 @@
+h1, header{
+margin-top: 70px;
+}
+figure{
+	font-weight: bold;
+	text-align: center;
+}
+#home{
+	
+	float: right;
+	position: fixed;
+	right: 0px;
+	top: 85%;
+	z-index: 1;
+}
+body{/*
+	background-image:url("../pics/bg.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;*/
+}
+#jumbo{
+background-image: url("../pics/fond2.jpg");
+	background-size: cover;
+	color: ivory;
+}
+/* .box{ */
+/* 	  margin-bottom: 20px; */
+/*     padding: 30px 15px; */
+/*     background: #fff; */
+/*     background: rgba(255,255,255,0.9); */
+/* } */
+/* .img-full{ */
+/* min-width: 100%; */
+/* /*  margin: 0 auto; */ */
+/* } */
+/* #slide{ */
+
+/* 	 margin: 0 auto; */
+/* } */
+.titre3{
+	text-align: center;
+	background-color: lime;
+	
+}
+#img{
+	display:block;
+	width:auto;
+margin-left:auto;
+margin-right:auto;
+}
+#bouton{
+	width:auto;
+	margin-left:auto;
+	margin-right:auto;
+	color:black;
+}
+#GAUCHE{	
+	COLOR:BLACK;
+}
+
+#DROIT{
+
+	COLOR:BLACK;
+}
+#tableau>tbody>tr:hover{
+	background-color: aqua;
+}
+.accordeon{	
+
+	letter-spacing: 5px;
+}
